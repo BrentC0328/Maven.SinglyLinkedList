@@ -34,7 +34,7 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
 
     @Override
     public boolean contains(Object data) {
-        return false;
+        return this.find(data) != -1;
     }
 
     @Override
@@ -72,8 +72,22 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
     }
 
     @Override
-    public Object get(int index) throws IndexOutOfBoundsException {
-        return null;
+    public AnyType get(int index) throws IndexOutOfBoundsException {
+        int result = -1;
+        if (this.isEmpty()){
+            throw new IndexOutOfBoundsException();
+        }
+        Node<AnyType> temp = this.head;
+        do{
+            result++;
+            if (result == index){
+                return temp.getData();
+            }
+            temp = temp.getNext();
+        } while (temp != null);
+
+
+        return (AnyType) new IndexOutOfBoundsException();
     }
 
     @Override

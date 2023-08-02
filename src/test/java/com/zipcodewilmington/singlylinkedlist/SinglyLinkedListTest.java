@@ -155,4 +155,17 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void getTest1() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        int expected = 5;
+        linkList.add(1);
+        linkList.add(2);
+        linkList.add(5);
+
+        int actual = (int) linkList.get(2);
+
+        Assert.assertEquals(expected,actual);
+    }
+
 }
