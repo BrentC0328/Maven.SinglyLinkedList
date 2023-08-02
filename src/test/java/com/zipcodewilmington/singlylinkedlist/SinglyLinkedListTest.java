@@ -101,4 +101,58 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(expected, actual);
     }
 
+    @Test
+    public void findTest0() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        int expected = -1;
+        int actual = linkList.find(1);
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void findTest1() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        int expected = 0;
+        linkList.add(1);
+
+        int actual = linkList.find(1);
+
+        Assert.assertEquals(expected,actual);
+    }
+    @Test
+    public void findTest1_1() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        linkList.add(5);
+        int expected = linkList.size() - 1;
+
+        int actual = linkList.find(5);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void findTest2() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        int expected = 1;
+        linkList.add(1);
+        linkList.add(2);
+
+        int actual = linkList.find(2);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void findTest3() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        int expected = 2;
+        linkList.add(1);
+        linkList.add(2);
+        linkList.add(5);
+
+        int actual = linkList.find(5);
+
+        Assert.assertEquals(expected,actual);
+    }
+
 }

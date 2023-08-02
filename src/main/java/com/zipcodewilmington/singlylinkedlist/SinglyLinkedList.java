@@ -39,7 +39,21 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
 
     @Override
     public int find(Object data) {
-        return 0;
+        int result = -1;
+        if (this.isEmpty()){
+            return result;
+        }
+        Node<AnyType> temp = this.head;
+        do{
+            result++;
+            if (temp.getData().equals(data)){
+                return result;
+            }
+            temp = temp.getNext();
+        } while (temp != null);
+
+
+        return -1;
     }
 
     @Override
@@ -49,11 +63,9 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
         }
         Node<AnyType> temp = this.head;
         Integer result = 0;
-
             do{
                result++;
                temp = temp.getNext();
-
             } while (temp != null);
 
         return result;
