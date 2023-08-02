@@ -106,7 +106,18 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
 
     @Override
     public SinglyLinkedList copy() {
-        return null;
+
+        SinglyLinkedList result = new SinglyLinkedList();
+        if(this.isEmpty()){
+            return result;
+        }
+        Node temp = this.head;
+        while(temp.hasNext()){
+            result.add(temp.getData());
+            temp = temp.getNext();
+        }
+        result.add(temp.getData());
+        return result;
     }
 
     @Override
