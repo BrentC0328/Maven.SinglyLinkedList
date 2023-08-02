@@ -163,9 +163,22 @@ public class SinglyLinkedListTest {
         linkList.add(2);
         linkList.add(5);
 
-        int actual = (int) linkList.get(2);
+        Node actual = linkList.get(2);
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected,actual.getData());
+    }
+
+    @Test
+    public void getTest2() {
+        SinglyLinkedList<Integer> linkList = new SinglyLinkedList<>();
+        int expected = 2;
+        linkList.add(1);
+        linkList.add(2);
+        linkList.add(5);
+
+        Node actual = linkList.get(1);
+
+        Assert.assertEquals(expected,actual.getData());
     }
 
 }

@@ -30,6 +30,20 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
     @Override
     public void remove(int index) throws IndexOutOfBoundsException {
 
+        if (this.size() < 2){
+            head = null;
+        }
+        else if (index == 0){
+            head = head.getNext();
+        } else if (get(index).hasNext()){
+            Node current = get(index);
+            Node previous = get(index - 1);
+            Node after = get (index + 1);
+            previous.setNext(after);
+            current.setNext(null);
+        }
+
+        
     }
 
     @Override
@@ -72,22 +86,22 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
     }
 
     @Override
-    public AnyType get(int index) throws IndexOutOfBoundsException {
+    public Node get(int index) throws IndexOutOfBoundsException {
         int result = -1;
         if (this.isEmpty()){
             throw new IndexOutOfBoundsException();
         }
-        Node<AnyType> temp = this.head;
+        Node temp = this.head;
         do{
             result++;
             if (result == index){
-                return temp.getData();
+                return temp;
             }
             temp = temp.getNext();
         } while (temp != null);
 
 
-        return (AnyType) new IndexOutOfBoundsException();
+        return null;
     }
 
     @Override
