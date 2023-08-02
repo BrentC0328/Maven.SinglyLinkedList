@@ -44,7 +44,19 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
 
     @Override
     public int size() {
-        return 0;
+        if (this.isEmpty()){
+            return 0;
+        }
+        Node<AnyType> temp = this.head;
+        Integer result = 0;
+
+            do{
+               result++;
+               temp = temp.getNext();
+
+            } while (temp != null);
+
+        return result;
     }
 
     @Override
@@ -73,7 +85,7 @@ public class SinglyLinkedList<AnyType> implements SinglyLinkedListInterface {
         string.append("head -> ");
 
         Node<AnyType> temp = this.head;
-        if (!isEmpty()){
+        if (!this.isEmpty()){
         do{
             string.append("[")
                     .append(temp.getData())

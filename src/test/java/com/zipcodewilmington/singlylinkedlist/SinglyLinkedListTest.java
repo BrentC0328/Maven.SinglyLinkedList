@@ -70,5 +70,35 @@ public class SinglyLinkedListTest {
         Assert.assertEquals(expected, actual);
 
     }
+    @Test
+    public void sizeTest0(){
+        SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>();
+        Integer expected = 0;
+
+        Integer actual = linkedList.size();
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void sizeTest1(){
+        SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>();
+        Integer expected = 1;
+        linkedList.add(1);
+
+        Integer actual = linkedList.size();
+
+        Assert.assertEquals(expected, actual);
+    }
+    @Test
+    public void sizeTest2(){
+        SinglyLinkedList<Integer> linkedList = new SinglyLinkedList<>();
+        Integer expected = 2;
+        linkedList.add(1);
+        linkedList.add(2);
+
+        Integer actual = linkedList.size();
+
+        Assert.assertEquals(expected, actual);
+    }
 
 }
